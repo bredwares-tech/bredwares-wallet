@@ -12,22 +12,22 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 20);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    scroller.scrollTo(sectionId, {
-      duration: 800,
-      delay: 0,
-      smooth: true,
-      offset: -100, // Adjusts for navbar height
-    });
-  };
+  // const scrollToSection = (sectionId: string) => {
+  //   scroller.scrollTo(sectionId, {
+  //     duration: 800,
+  //     delay: 0,
+  //     smooth: true,
+  //     offset: -100, // Adjusts for navbar height
+  //   });
+  // };
 
   const navItems = [
     { name: "Features", sectionId: "features", submenu: [] },
@@ -78,7 +78,7 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                  onClick={() => scrollToSection(item.sectionId)}
+                  // onClick={() => scrollToSection(item.sectionId)}
                 >
                   <span>{item.name}</span>
                   {item.submenu.length > 0 && (
