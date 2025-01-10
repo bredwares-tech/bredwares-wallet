@@ -29,6 +29,23 @@ export default function Navbar() {
   //   });
   // };
 
+  const scrollToSection = (sectionId: string): void => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Get the navbar height to offset the scroll position
+      const navbar = document.querySelector('nav');
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const navItems = [
     { name: "Features", sectionId: "features", submenu: [] },
     { name: "Products", sectionId: "products", submenu: [] },
@@ -40,7 +57,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed   w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-white"
       }`}
     >
@@ -78,7 +95,7 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                  // onClick={() => scrollToSection(item.sectionId)}
+                  onClick={() => scrollToSection(item.sectionId)}
                 >
                   <span>{item.name}</span>
                   {item.submenu.length > 0 && (
