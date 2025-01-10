@@ -1,5 +1,4 @@
 "use client";
-
 import {
   ColumnDef,
   flexRender,
@@ -34,13 +33,13 @@ import { useRouter } from "next/navigation";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  onEdit?: (user: TData) => void; // Add this line
+  onEdit?: (user: TData) => void;
 }
 
 export function DataTable<TData extends { id: string }, TValue>({
   columns,
   data,
-  onEdit, // Add this parameter
+  onEdit,
 }: DataTableProps<TData, TValue>) {
   const router = useRouter();
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -95,10 +94,12 @@ export function DataTable<TData extends { id: string }, TValue>({
     <div>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter name..."
+          value={
+            (table.getColumn("full_name")?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("full_name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />

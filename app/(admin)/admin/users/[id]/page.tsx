@@ -1,4 +1,3 @@
-// UserDetailPage.tsx
 "use client";
 import { useParams } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,13 +5,15 @@ import { Separator } from "@/components/ui/separator";
 import { UserInfo } from "./user-info";
 import { PaymentHistory } from "./payment-history";
 import { useEffect, useState } from "react";
-
 interface User {
+  id: string;
   full_name: string;
   email: string;
   total_amount: number;
+  created_at: string;
+  is_Admin: boolean;
+  remaining_amount: string;
 }
-
 interface Payment {
   id: string;
   user_id: string;
@@ -93,9 +94,7 @@ export default function UserDetailPage() {
   return (
     <div className="container mx-auto py-10">
       <Card>
-        <CardHeader>
-          <CardTitle>User Details</CardTitle>
-        </CardHeader>
+        <CardHeader></CardHeader>
         <CardContent className="space-y-6">
           <UserInfo user={user} />
           <Separator className="my-6" />

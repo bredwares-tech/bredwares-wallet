@@ -146,16 +146,16 @@ export const createColumns = (
               Copy User ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={(e) => e.stopPropagation()}>
+            {/* <DropdownMenuItem onClick={(e) => e.stopPropagation()}>
               View user details
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuItem
               onClick={(e) => {
                 e.stopPropagation();
                 onEdit(user);
               }}
             >
-              Edit user
+              Edit user Remaining Amount
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

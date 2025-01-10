@@ -1,5 +1,4 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal, ArrowUpDown } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -105,9 +104,23 @@ export const createColumns = ({
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
-    ),
+    cell: ({ row }) => {
+      const status = row.getValue("status") as "completed" | "pending";
+
+      return (
+        <div className="flex items-center">
+          <span
+            className={`px-2 py-1 rounded-full text-xs font-medium ${
+              status === "completed"
+                ? "bg-green-100 text-green-800"
+                : "bg-yellow-100 text-yellow-800"
+            }`}
+          >
+            {status.charAt(0).toUpperCase() + status.slice(1)}
+          </span>
+        </div>
+      );
+    },
   },
   {
     accessorKey: "payment_date",
@@ -147,7 +160,7 @@ export const createColumns = ({
             <DropdownMenuSeparator />
             {/* <DropdownMenuItem>View customer</DropdownMenuItem> */}
             <DropdownMenuItem onClick={() => onEditPayment(payment)}>
-              Edit Payment
+              Edit Payment Status
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
