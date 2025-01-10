@@ -4,6 +4,7 @@ import AnimatedLogo from "@/components/AnimatedLogo";
 // import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { FormMessage, Message } from "@/components/form-message";
 import { SubmitButton } from "@/components/submit-button";
+import ToastProvider from "@/components/ToastProvider";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInGuard } from "@/utils/auth-guard";
@@ -13,6 +14,8 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
   await signInGuard();
   const searchParams = await props.searchParams;
   return (
+    <>
+    <ToastProvider />
     <div className="flex items-center justify-center w-full min-h-screen bg-gradient-to-br from-blue-400 to-blue-600">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-2xl">
         <div className="text-center">
@@ -82,5 +85,6 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
         </form>
       </div>
     </div>
+    </>
   );
 }

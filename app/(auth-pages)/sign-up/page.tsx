@@ -8,6 +8,8 @@ import { SmtpMessage } from "../smtp-message";
 import { signUpAction } from "@/app/actions";
 import { signUpGuard } from "@/utils/auth-guard";
 import AnimatedLogo from "@/components/AnimatedLogo";
+import { SignupMessage } from "@/components/signup-message";
+import { ToastProvider } from "@radix-ui/react-toast";
 
 export default async function Signup(props: {
   searchParams: Promise<Message>;
@@ -16,13 +18,15 @@ export default async function Signup(props: {
   const searchParams = await props.searchParams;
   if ("message" in searchParams) {
     return (
-      <div className="w-full flex-1 flex items-center h-screen sm:max-w-md justify-center gap-2 p-4">
-        <FormMessage message={searchParams} />
+      <div className="w-full">
+        <SignupMessage message={searchParams} />
       </div>
     );
   }
 
   return (
+    <>
+    <ToastProvider/>
     <div className="flex items-center justify-center w-full min-h-screen bg-gradient-to-br from-blue-400 to-blue-600">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-2xl">
         <div className="text-center">
@@ -100,5 +104,6 @@ export default async function Signup(props: {
       </div>
       {/* <SmtpMessage /> */}
     </div>
+    </>
   );
 }
