@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, Users, X } from "lucide-react";
+import { Home, ShoppingCart, Users, X } from "lucide-react";
 import Image from "next/image";
 
 export default function Sidebar({
@@ -12,8 +12,7 @@ export default function Sidebar({
   const menuItems = [
     { icon: Home, label: "Dashboard", href: "/user" },
     { icon: Users, label: "Payments", href: "/user/payments" },
-    { icon: Users, label: "Ebay-Orders", href: "/user/ebayOrder" },
-  ];
+    { icon: ShoppingCart, label: "Orders", href: "/user/ebayOrder" }  ];
 
   return (
     <>
