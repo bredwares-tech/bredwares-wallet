@@ -12,6 +12,7 @@ export default function Sidebar({
   const menuItems = [
     { icon: Home, label: "Dashboard", href: "/user" },
     { icon: Users, label: "Payments", href: "/user/payments" },
+    { icon: Users, label: "Ebay-Orders", href: "/user/ebayOrder" },
   ];
 
   return (
