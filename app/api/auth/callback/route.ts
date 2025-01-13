@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
     const accessToken = await getAccessToken(code);
     
     // Create response using NextResponse
-    const response = NextResponse.redirect(new URL('/', request.url), {
+    const response = NextResponse.redirect(new URL('/user/ebayOrder', request.url), {     //change callback
       status: 302
     });
 
