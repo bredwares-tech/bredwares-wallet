@@ -55,11 +55,12 @@ export const getOrders = async (accessToken: string) => {
         'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'  // Adjust for your target marketplace
       }
     });
-    console.log(response.data.orders , "response.data.orders") 
+    console.log(response.data.orders , "response.data.orders")       
     const orders = response.data.orders || [];
-    return orders.map((order: any) => ({
+    return orders.map((order: any) => ({           
       orderId: order.orderId,
       title: order.lineItems[0]?.title || 'Untitled Order',
+      image: order.lineItems[0]?.image?.imageUrl || 'No Image Available', // Fetch image if available
       status: order.orderFulfillmentStatus,
       createdDate: new Date(order.creationDate).toLocaleDateString(),
       total: {
