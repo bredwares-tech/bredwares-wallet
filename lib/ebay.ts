@@ -60,7 +60,7 @@ export const getOrders = async (accessToken: string) => {
     return orders.map((order: any) => ({           
       orderId: order.orderId,
       title: order.lineItems[0]?.title || 'Untitled Order',
-      image: order.lineItems[0]?.image?.imageUrl || 'No Image Available', // Fetch image if available
+      image: order.lineItems[0]?.image || 'No Image Available', // Fetch image if available
       status: order.orderFulfillmentStatus,
       createdDate: new Date(order.creationDate).toLocaleDateString(),
       total: {
