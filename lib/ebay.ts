@@ -55,7 +55,7 @@ export const getOrders = async (accessToken: string) => {
         'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'  // Adjust for your target marketplace
       }
     });
-
+    console.log(response.data.orders , "response.data.orders") 
     const orders = response.data.orders || [];
     return orders.map((order: any) => ({
       orderId: order.orderId,

@@ -7,30 +7,30 @@ import { Loader2 } from "lucide-react";
 
 interface CheckoutModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: () => void;                         
   onSave: (
     full_name: string,
-    email: string,
+    email: string,       
     amount: string,
     user: string
   ) => void;
-  loading: boolean;
+  loading: boolean;                  
 }
-
+                                                                                           
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   isOpen,
   onClose,
-  onSave,
+  onSave,   
   loading,
 }) => {
-  const [full_name, setFullName] = useState("");
-  const [email, setEmail] = useState("");
+  const [full_name, setFullName] = useState("");                                                       
+  const [email, setEmail] = useState("");  
   const [amount, setAmount] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");          
   const [cardError, setCardError] = useState("");
   const [user, setUser] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
+                                   
   const supabase = createClient();
   const router = useRouter();
 
@@ -64,10 +64,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
     if (!isOpen) {
       setAmount("");
       setErrorMsg("");
-      setCardError("");
+      setCardError("");                                                                                                                     
     }
   }, [isOpen]);
-
+              
   const handleCardChange = (event: any) => {
     setCardError(event.error ? event.error.message : "");
   };
@@ -99,13 +99,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   };
 
   if (!isOpen) return null;
-
+ 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto" aria-hidden="true">
       <div className="fixed inset-0 bg-black/30 backdrop-blur-sm"></div>
 
       <div className="flex min-h-full items-center justify-center p-4">
-        <div className="relative w-full max-w-2xl rounded-xl bg-white shadow-2xl">
+        <div className="relative w-full max-w-2xl rounded-xl bg-white shadow-2xl">    
           <div className="flex items-center justify-between border-b px-6 py-4">
             <h3 className="text-xl font-semibold text-gray-900">
               Make Payment
