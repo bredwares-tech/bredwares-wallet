@@ -8,32 +8,32 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 const testimonials = [
   {
     name: 'Sarah Johnson',
-    role: 'Small Business Owner',
-    content: 'Bredwares Wallet  has revolutionized how I manage my business finances. It\'s intuitive, secure, and saves me so much time!',
+    role: 'Flo***ime Team',
+    content: 'This is by far the easiest and fastest way to fulfill orders and import products directly to my store. With their updated supplier analytics, EcomFill has proven to be the best partner for my business. Thank you for making everything so much easier!',
     avatar: '/icons/woman (1).png',
   },
   {
     name: 'Michael Chen',
-    role: 'Freelance Developer',
-    content: 'As a freelancer, keeping track of Userss was always a hassle. Bredwares Wallet  made it simple and stress-free.',
+    role: 'Ut***ore Team',
+    content: 'I’ve been using EcomFill for a few months now, and I’m seriously impressed. The customer support team has been so helpful every time I reached out. They walked me through the setup process. It’s great to know they’ve got my back!',
     avatar: '/icons/man.png',
   },
   {
     name: 'Emily Rodriguez',
-    role: 'Student',
-    content: 'Bredwares Wallet  helped me budget my expenses and save money. It\'s a must-have app for every student!',
+    role: 'De**ium Team',
+    content: 'Their service is amazing! It’s super easy to use, has all the tools I need, and everything works really smoothly. Definitely one of the most user-friendly apps I’ve tried.',
     avatar: '/icons/woman (2).png',
   },
   {
     name: 'David Thompson',
     role: 'E-commerce Entrepreneur',
-    content: 'The multi-currency support in Bredwares Wallet  has been a game-changer for my international business. Highly recommended!',
+    content: 'The multi-currency support in EcomFill has been a game-changer for my international business. Highly recommended!',
     avatar: '/icons/gamer.png',
   },
   {
     name: 'Sophia Lee',
     role: 'Financial Advisor',
-    content: 'I recommend Bredwares Wallet  to all my clients. Its robust features and user-friendly interface make financial management a breeze.',
+    content: 'I recommend EcomFill to all my clients. Its robust features and user-friendly interface make financial management a breeze.',
     avatar: '/icons/woman.png',
   },
 ]
@@ -70,12 +70,12 @@ export default function Testimonials() {
     <div id="testimonials" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Testimonials</h2>
+          {/* <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Testimonials</h2> */}
           <p className="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
             What our customers say
           </p>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            Don't just take our word for it. Here's what some of our satisfied users have to say about Bredwares Wallet .
+            Don't just take our word for it. Here's what some of our satisfied users have to say about EcomFill .
           </p>
         </div>
 

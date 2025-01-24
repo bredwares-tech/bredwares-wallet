@@ -20,15 +20,14 @@ export default function Hero() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-20 md:mt-0">
                 <span className={`block xl:inline ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                Security Meets <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>Simplicity</span> 
+                Your Trusted Partner for Seamless  <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>eBay</span>  Fulfillment
                 </span>{' '}
                 {/* <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                   with Our Wallet 
                 </span> */}
               </h1>
               <p className={`mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-                Manage your money like never before with our state-of-the-art digital wallet. Secure, fast, and user-friendly.
-              </p>
+              Streamline your eBay business with fast, reliable, and hassle-free fulfillment. From inventory management to speedy shipping, EcomFill got you covered every step of the way. </p>
               <div className={`mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <div className="rounded-md shadow">
                   <Button size="lg" className="w-full flex items-center justify-center group">
@@ -36,9 +35,9 @@ export default function Hero() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
+                {/* <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Button variant="outline" size="lg" className="w-full">Learn more</Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </main>
@@ -48,7 +47,7 @@ export default function Hero() {
         <div className="relative h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
           <Image
             className="absolute inset-0 w-full h-full object-cover"
-            src="/images/hero-wallet.jpg"
+            src="/assests/Banner.webp"
             alt="Wallet illustration"
             layout="fill"
             priority

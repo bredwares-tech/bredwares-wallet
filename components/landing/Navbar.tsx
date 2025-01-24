@@ -74,7 +74,7 @@ export default function Navbar() {
              
               >
                 <Image
-                  src="/blue-logo.png"
+                        src="/assests/EcomFillLogo.png"
                   alt="Admin Logo"
                   fill
                   className="object-contain"

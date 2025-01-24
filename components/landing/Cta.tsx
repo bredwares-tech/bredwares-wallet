@@ -86,10 +86,10 @@ export default function CTA() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <motion.div variants={itemVariants} className="mb-8">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Ready to take control of your finances?
+          HAVE A QUESTION?
           </h2>
           <p className="mt-4 text-lg leading-6 text-blue-100">
-            Join thousands of satisfied users who have transformed their financial management with Bredwares Wallet .
+          Our team is just a message away!
           </p>
         </motion.div>
 
@@ -103,17 +103,17 @@ export default function CTA() {
             className="bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-300"
           >
             <span className="flex items-center">
-              Sign up for free
+            Get in Touch
               <ArrowRight className="ml-2 h-5 w-5" />
             </span>
           </Button>
         </motion.div>
-
+{/* 
         <motion.p variants={itemVariants} className="mt-4 text-sm text-blue-100">
           No credit card required. Start your 30-day free trial today.
-        </motion.p>
+        </motion.p> */}
 
-        <div className="mt-12 flex justify-around">
+        {/* <div className="mt-12 flex justify-around">
           {[
             { icon: Wallet, label: 'Secure Wallet' },
             { icon: CreditCard, label: 'Easy Userss' },
@@ -133,9 +133,9 @@ export default function CTA() {
               <p className="text-sm text-blue-100">{item.label}</p>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
-        <motion.div
+        {/* <motion.div
           className="absolute -top-16 -left-16 w-32 h-32 bg-blue-500 rounded-full opacity-20"
           animate={{
             scale: [1, 1.2, 1],
@@ -158,7 +158,7 @@ export default function CTA() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-        />
+        /> */}
       </div>
     </motion.section>
   )

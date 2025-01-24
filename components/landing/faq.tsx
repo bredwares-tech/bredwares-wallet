@@ -7,31 +7,52 @@ import { ChevronDown, Search } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'How secure is Bredwares Wallet ?',
-    answer: 'Bredwares Wallet  uses state-of-the-art encryption and security measures to protect your financial information. We employ multi-factor authentication, end-to-end encryption, and regular security audits to ensure your data remains safe.',
+    question: 'What is EcomFill?',
+    answer: 'EcomFill is a powerful platform designed to help eBay store owners automate their operations. It integrates your eBay store, manages your orders, and ensures seamless fulfillment, so you can focus on growing your business.',
+    icon: '🛒',
+  },
+  {
+    question: 'How does EcomFill work?',
+    answer: 'EcomFill connects with your eBay store to synchronize your listings and orders. It automates order fulfillment by processing and shipping customer orders through your suppliers, keeping your inventory and listings updated in real-time.',
+    icon: '⚙️',
+  },
+  {
+    question: 'Is EcomFill easy to set up?',
+    answer: 'Yes! EcomFill offers a user-friendly setup process. Simply connect your eBay store, customize your preferences, and let EcomFill handle the rest. Our support team is available to guide you if needed.',
+    icon: '✅',
+  },
+  {
+    question: 'Does EcomFill handle inventory management?',
+    answer: 'Yes, EcomFill continuously monitors your supplier’s inventory and updates your eBay listings accordingly. This ensures you never oversell or list out-of-stock products.',
+    icon: '📦',
+  },
+  {
+    question: 'How does EcomFill handle order fulfillment?',
+    answer: 'When a customer places an order, EcomFill processes it automatically by coordinating with your supplier to ship the product directly to the customer. You won’t have to lift a finger.',
+    icon: '🚚',
+  },
+  {
+    question: 'Is my data secure on EcomFill?',
+    answer: 'EcomFill prioritizes data security with advanced encryption and secure protocols. Your store data, customer information, and transactions are safe with us.',
     icon: '🔒',
   },
   {
-    question: 'Can I use Bredwares Wallet  internationally?',
-    answer: 'Yes, Bredwares Wallet  is designed for global use. You can access your wallet from anywhere in the world and make transactions across different currencies.',
-    icon: '🌍',
+    question: 'What kind of support does EcomFill offer?',
+    answer: 'We provide 24/7 support to assist you with any questions or issues. Whether you need help setting up your store or troubleshooting, our team is always ready to assist.',
+    icon: '💬',
   },
   {
-    question: 'What types of transactions can I make with Bredwares Wallet ?',
-    answer: 'With Bredwares Wallet , you can make a wide range of transactions including peer-to-peer transfers, bill Userss, online purchases, and more. The specific types of transactions available may depend on your account type and location.',
-    icon: '💸',
+    question: 'Can I track my order statuses on EcomFill?',
+    answer: 'Yes, EcomFill provides real-time updates on all orders, including shipment statuses, so you’re always informed about your store\'s operations.',
+    icon: '📊',
   },
   {
-    question: 'Is there a limit to how much money I can store in my Bredwares Wallet  account?',
-    answer: 'The storage limit depends on your account type. Basic accounts have a lower limit, while Pro and Business accounts have higher or no limits. Please check your account details or contact our support team for specific information.',
-    icon: '💰',
+    question: 'How do I get started with EcomFill?',
+    answer: 'Getting started is easy! Sign up on our website, connect your eBay store, and follow the setup guide. If you need help, our support team is just a click away.',
+    icon: '🚀',
   },
-  {
-    question: 'How quickly are transactions processed?',
-    answer: 'Most transactions on Bredwares Wallet  are processed instantly. However, some transactions, especially those involving different currencies or external bank accounts, may take up to 1-3 business days to complete.',
-    icon: '⚡',
-  },
-]
+];
+
 
 export default function FAQ() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -46,14 +67,14 @@ export default function FAQ() {
     <div id="faq" className="py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-base text-blue-600 font-semibold tracking-wide uppercase"
           >
             FAQ
-          </motion.h2>
+          </motion.h2> */}
           <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
