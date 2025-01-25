@@ -60,10 +60,10 @@ export default function CreativeHero2({
 
   return (
     <div
-      className="py-16 flex items-center bg-gradient-to-br from-purple-50 to-indigo-100 overflow-hidden"
+      className="py-4 flex items-center bg-gradient-to-br from-purple-50 to-indigo-100 overflow-hidden"
       ref={ref}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           variants={containerVariants}
@@ -74,14 +74,9 @@ export default function CreativeHero2({
             className="relative h-[400px] sm:h-[500px] lg:h-[600px]"
             style={{ y: imageY }}
           >
+        
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-2xl transform rotate-3"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            />
-            <motion.div
-              className="absolute inset-0 overflow-hidden rounded-2xl"
+              className="absolute mt-14 inset-0 overflow-hidden rounded-2xl"
               initial={{ opacity: 0, scale: 0.8, rotate: -3 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -89,15 +84,16 @@ export default function CreativeHero2({
               <Image
                 src={imageSrc || "/placeholder.svg"}
                 alt={imageAlt}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-2xl"
+                width={500}
+                  height={600}
+                  objectFit="cover"
+                  className="rounded-2xl"
               />
             </motion.div>
           </motion.div>
           <motion.div className="space-y-10" variants={itemVariants}>
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+            className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl"
               variants={itemVariants}
             >
               {heading}
@@ -110,7 +106,7 @@ export default function CreativeHero2({
             </motion.p>
             <motion.div variants={itemVariants}>
               <motion.button
-                className="px-6 py-3 bg-indigo-600 text-white rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105"
+                 className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-full text-lg font-semibold  transition duration-300 ease-in-out transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

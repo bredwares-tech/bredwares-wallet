@@ -49,13 +49,14 @@ export default async function LandingPage() {
         imageAlt="A futuristic cityscape representing innovation and creativity"
         />
         <IconsStrip/>
-      <ImpactReview/>
+   
       <CreativeHero2
         heading="Hassle-Free Fulfillment for eBay Sellers"
         description="EcomFill simplifies every step of your fulfillment process, from inventory syncing to fast, reliable shipping. Our cutting-edge platform automates routine tasks, ensuring accuracy and efficiency with every order. Whether you're managing a handful of items or scaling to thousands of sales, EcomFill guarantees smooth operations that free you up to focus on growing your eBay business and delighting your customers."
-        imageSrc="/assests/stock.webp"
+        imageSrc="/assests/worker.jpg"
         imageAlt="A futuristic cityscape representing innovation and creativity"
       />
+         <ImpactReview/>
         {/* image component */}
         {/* icons strip */}
         {/* review component */}

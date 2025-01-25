@@ -14,13 +14,13 @@ export default function Hero() {
 
   return (
     <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl pt-4 mx-auto">
         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32 lg:w-full">
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-20 md:mt-0">
                 <span className={`block xl:inline ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                Your Trusted Partner for Seamless  <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>eBay</span>  Fulfillment
+                Your Trusted Partner <br/> for Seamless  <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}> <br/> eBay</span>  Fulfillment
                 </span>{' '}
                 {/* <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                   with Our Wallet 
@@ -30,7 +30,7 @@ export default function Hero() {
               Streamline your eBay business with fast, reliable, and hassle-free fulfillment. From inventory management to speedy shipping, EcomFill got you covered every step of the way. </p>
               <div className={`mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                 <div className="rounded-md shadow">
-                  <Button size="lg" className="w-full flex items-center justify-center group">
+                   <Button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transition-all duration-300">
                     Get started
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

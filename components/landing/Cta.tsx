@@ -100,7 +100,7 @@ export default function CTA() {
         >
           <Button
             size="lg"
-            className="bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-300"
+         className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-full text-lg font-semibold  transition duration-300 ease-in-out transform hover:scale-105"
           >
             <span className="flex items-center">
             Get in Touch

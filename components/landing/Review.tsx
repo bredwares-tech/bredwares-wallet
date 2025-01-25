@@ -52,7 +52,7 @@ const AnimatedStat: React.FC<StatProps> = ({ endValue, label, prefix = "", suffi
       }}
       className="flex flex-col items-center"
     >
-      <motion.span className="text-5xl md:text-6xl lg:text-7xl font-bold text-indigo-600">
+      <motion.span className="text-3xl md:text-4xl lg:text-5xl font-bold text-indigo-600">
         {prefix}
         {count}
         {suffix}
@@ -103,7 +103,7 @@ export default function ImpactReview() {
           }}
         >
           <motion.h2
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900  text-center lg:leading-[80px] leading-relaxed mt-10 mx-auto max-w-3xl"
+          className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900  text-center lg:leading-[80px] leading-relaxed mt-10 mx-auto max-w-3xl"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: { opacity: 1, y: 0 },
