@@ -74,7 +74,7 @@ export default function CreativeHero({
 
   return (
     <div
-      className="py-16 mt-10 flex flex-col justify-center bg-white overflow-hidden"
+      className=" flex flex-col justify-center bg-gradient-to-br from-purple-50 to-indigo-100 overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto flex-grow flex items-center justify-center">

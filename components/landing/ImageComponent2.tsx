@@ -61,7 +61,7 @@ export default function CreativeHero2({
 
   return (
     <div
-      className="py-4 flex items-center bg-gradient-to-br from-purple-50 to-indigo-100 overflow-hidden"
+      className="flex items-center bg-gradient-to-br from-purple-50 to-indigo-100 overflow-hidden"
       ref={ref}
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
