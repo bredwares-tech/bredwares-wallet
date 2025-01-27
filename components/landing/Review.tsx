@@ -58,7 +58,7 @@ const AnimatedStat: React.FC<StatProps> = ({ endValue, label, prefix = "", suffi
         {suffix}
       </motion.span>
       <motion.span
-        className="text-xl md:text-2xl text-gray-600 mt-4"
+        className="text-xl md:text-xl text-gray-600 mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
@@ -118,9 +118,9 @@ export default function ImpactReview() {
               visible: { opacity: 1 },
             }}
           >
-            <AnimatedStat endValue={1.8} label="Users" suffix="M+" />
-            <AnimatedStat endValue={1} label="Earned Money" prefix="$" suffix="B+" />
-            <AnimatedStat endValue={800} label="Orders" suffix="M+" />
+            <AnimatedStat endValue={1.8} label="Dropshippers use EcomFill" suffix="M+" />
+            <AnimatedStat endValue={1} label="Earned by our Dropshippers" prefix="$" suffix="B+" />
+            <AnimatedStat endValue={800} label="Orders Fulfilled" suffix="M+" />
           </motion.div>
         </motion.div>
       </div>
