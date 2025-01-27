@@ -112,14 +112,14 @@ export default function ImpactReview() {
             Our Impact for Million of Dropshippers
           </motion.h2>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16  pt-24"
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto  pt-24"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1 },
             }}
           >
-            <AnimatedStat endValue={100} label="Users" suffix="M+" />
-            <AnimatedStat endValue={150} label="Earned Money" prefix="$" suffix="B+" />
+            <AnimatedStat endValue={1.8} label="Users" suffix="M+" />
+            <AnimatedStat endValue={1} label="Earned Money" prefix="$" suffix="B+" />
             <AnimatedStat endValue={800} label="Orders" suffix="M+" />
           </motion.div>
         </motion.div>

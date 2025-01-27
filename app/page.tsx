@@ -64,7 +64,7 @@ export default async function LandingPage() {
         {/* <Products />  this has been removed */}
         <Testimonials />
         <FAQ />
-        <CTA />
+        {/* <CTA /> */}
       </main>
       <Footer />
     </div>

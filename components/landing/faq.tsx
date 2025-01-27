@@ -135,7 +135,7 @@ export default function FAQ() {
                   >
                     <AccordionTrigger className="px-4 py-4 hover:bg-blue-50 transition-colors duration-200">
                       <div className="flex items-center space-x-3">
-                        <span className="text-2xl">{faq.icon}</span>
+                        {/* <span className="text-2xl">{faq.icon}</span> */}
                         <span>{faq.question}</span>
                       </div>
                       <ChevronDown className={`h-4 w-4 shrink-0 text-blue-500 transition-transform duration-200 ${

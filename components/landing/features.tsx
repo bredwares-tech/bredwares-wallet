@@ -91,7 +91,7 @@ export default function Features() {
         </div>
 
         <div className="mt-20" ref={featuresRef}>
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-5 pb-5">
             {features.map((feature, index) => (
               <Card
                 key={feature.name}

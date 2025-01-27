@@ -9,6 +9,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface CreativeHeroProps {
   heading: string;
@@ -74,7 +75,6 @@ export default function CreativeHero2({
             className="relative h-[400px] sm:h-[500px] lg:h-[600px]"
             style={{ y: imageY }}
           >
-        
             <motion.div
               className="absolute mt-14 inset-0 overflow-hidden rounded-2xl"
               initial={{ opacity: 0, scale: 0.8, rotate: -3 }}
@@ -85,15 +85,15 @@ export default function CreativeHero2({
                 src={imageSrc || "/placeholder.svg"}
                 alt={imageAlt}
                 width={500}
-                  height={600}
-                  objectFit="cover"
-                  className="rounded-2xl"
+                height={600}
+                objectFit="cover"
+                className="rounded-2xl"
               />
             </motion.div>
           </motion.div>
           <motion.div className="space-y-10" variants={itemVariants}>
             <motion.h1
-            className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl"
+              className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl"
               variants={itemVariants}
             >
               {heading}
@@ -106,11 +106,12 @@ export default function CreativeHero2({
             </motion.p>
             <motion.div variants={itemVariants}>
               <motion.button
-                 className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-full text-lg font-semibold  transition duration-300 ease-in-out transform hover:scale-105"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-md text-lg font-semibold transition-all duration-300 ease-in-out flex items-center group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get Started
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             </motion.div>
           </motion.div>

@@ -24,18 +24,18 @@ const testimonials = [
     content: 'Their service is amazing! It’s super easy to use, has all the tools I need, and everything works really smoothly. Definitely one of the most user-friendly apps I’ve tried.',
     avatar: '/icons/woman (2).png',
   },
-  {
-    name: 'David Thompson',
-    role: 'E-commerce Entrepreneur',
-    content: 'The multi-currency support in EcomFill has been a game-changer for my international business. Highly recommended!',
-    avatar: '/icons/gamer.png',
-  },
-  {
-    name: 'Sophia Lee',
-    role: 'Financial Advisor',
-    content: 'I recommend EcomFill to all my clients. Its robust features and user-friendly interface make financial management a breeze.',
-    avatar: '/icons/woman.png',
-  },
+  // {
+  //   name: 'David Thompson',
+  //   role: 'E-commerce Entrepreneur',
+  //   content: 'The multi-currency support in EcomFill has been a game-changer for my international business. Highly recommended!',
+  //   avatar: '/icons/gamer.png',
+  // },
+  // {
+  //   name: 'Sophia Lee',
+  //   role: 'Financial Advisor',
+  //   content: 'I recommend EcomFill to all my clients. Its robust features and user-friendly interface make financial management a breeze.',
+  //   avatar: '/icons/woman.png',
+  // },
 ]
 
 export default function Testimonials() {
