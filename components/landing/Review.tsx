@@ -112,7 +112,7 @@ export default function ImpactReview() {
             Our Impact for Million of Dropshippers
           </motion.h2>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto  pt-24"
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto pt-10  md:pt-24"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1 },

@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-20 md:mt-0">
                 <span className={`block xl:inline ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                Your Trusted Partner <br/> for Seamless  <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}> <br/> eBay</span>  Fulfillment
+                Your Trusted Partner <br/> for Seamless  <span className={`lg:block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}> <br/> eBay</span>  Fulfillment
                 </span>{' '}
                 {/* <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                   with Our Wallet 
@@ -29,7 +29,7 @@ export default function Hero() {
               <p className={`mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
               Streamline your eBay business with fast, reliable, and hassle-free fulfillment. From inventory management to speedy shipping, EcomFill got you covered every step of the way. </p>
               <div className={`mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <div className="rounded-md shadow">
+                <div className="rounded-md lg:shadow">
                    <Button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transition-all duration-300">
                     Get started
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
-      <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
+      {/* <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
           <Shield className="h-6 w-6 text-blue-600" />
         </div>
@@ -66,7 +66,7 @@ export default function Hero() {
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
           <RefreshCw className="h-6 w-6 text-blue-600" />
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

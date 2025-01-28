@@ -66,7 +66,7 @@ export default function CreativeHero2({
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 items-center"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
@@ -106,7 +106,7 @@ export default function CreativeHero2({
             </motion.p>
             <motion.div variants={itemVariants}>
               <motion.button
-                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-md text-lg font-semibold transition-all duration-300 ease-in-out flex items-center group"
+                className="px-4 py-2 mb-5 bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white rounded-md text-lg font-semibold transition-all duration-300 ease-in-out flex items-center group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

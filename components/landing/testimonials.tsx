@@ -67,7 +67,7 @@ export default function Testimonials() {
   }
 
   return (
-    <div id="testimonials" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <div id="testimonials" className="py-10 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Testimonials</h2> */}

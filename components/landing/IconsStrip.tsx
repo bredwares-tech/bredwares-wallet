@@ -48,7 +48,8 @@ export function IconsStrip() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="flex justify-center space-x-12 sm:space-x-16 md:space-x-24">
+   <motion.div className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-16">
+
         {icons.map((icon, index) => (
           <motion.div
             key={index}

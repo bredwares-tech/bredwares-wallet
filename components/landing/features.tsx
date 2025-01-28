@@ -74,7 +74,7 @@ export default function Features() {
   return (
     <div
       id="features"
-      className=" bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+      className="pt-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
