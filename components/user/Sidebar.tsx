@@ -40,7 +40,7 @@ export default function Sidebar({
           <div className="relative w-36 h-8 lg:w-44 lg:h-10">
             <Link href="/admin">
               <Image
-                 src="/assests/EcomFillLogo.png"
+               src="/assests/logowhite.png"
                 alt="Admin Logo"
                 fill
                 className="object-contain"
