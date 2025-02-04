@@ -56,13 +56,13 @@ export default function OrdersList() {
       {orders.map((order) => (
         <div key={order.orderId} className="p-4 border rounded hover:shadow-md transition-shadow duration-200 flex items-start">
           {/* Render the image */}
-          {order.image && (
+          {/* {order.image && (
             <img
               src={order.image}
               alt={order.title || 'Order Image'}
               className="w-24 h-24 object-cover rounded mr-4"
             />
-          )}
+          )} */}
           <div>
             <h3 className="font-semibold text-lg">{order.title}</h3>
             <div className="mt-2 text-sm text-gray-600">
