@@ -118,13 +118,13 @@ export default function ListingProducts() {
                 )}
                 Add Payment
               </button>
-              <button
+              {/* <button
                 className="inline-flex items-center px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg hover:from-blue-600 hover:to-blue-800 focus:ring-4 focus:ring-blue-300 transition-all shadow-lg hover:shadow-xl disabled:opacity-50"
                 disabled={loading}
               >
                 <Plus className="mr-2 h-4 w-4" />
                 Connect eBay
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
