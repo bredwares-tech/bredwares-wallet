@@ -110,7 +110,7 @@ export default function Features() {
                   >
                     <feature.icon className="h-8 w-8" />
                   </div>
-                  <CardTitle className="mt-4 text-center text-2xl font-bold transition-colors group-hover:text-blue-600">
+                  <CardTitle className="mt-4 text-center text-2xl font-bold transition-colors group-hover:text-white md:group-hover:text-blue-600">
                     {feature.name}
                   </CardTitle>
                 </CardHeader>

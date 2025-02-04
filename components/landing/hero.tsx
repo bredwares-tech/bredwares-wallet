@@ -1,72 +1,87 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
-import { ArrowRight, Shield, Zap, RefreshCw } from 'lucide-react'
-import Image from 'next/image'
+import { useEffect, useRef } from "react"
+import Image from "next/image"
+import { motion, useInView, useAnimation } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    if (isInView) {
+      controls.start("visible")
+    }
+  }, [controls, isInView])
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  }
 
   return (
-    <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
-      <div className="max-w-7xl pt-4 mx-auto">
-        <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32 lg:w-full">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-20 md:mt-0">
-                <span className={`block xl:inline ${isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                Your Trusted Partner <br/> for Seamless  <span className={`lg:block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}> <br/> eBay</span>  Fulfillment
-                </span>{' '}
-                {/* <span className={`block text-blue-600 xl:inline ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                  with Our Wallet 
-                </span> */}
-              </h1>
-              <p className={`mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-              Streamline your eBay business with fast, reliable, and hassle-free fulfillment. From inventory management to speedy shipping, EcomFill got you covered every step of the way. </p>
-              <div className={`mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                <div className="rounded-md lg:shadow">
-                   <Button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transition-all duration-300">
-                    Get started
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-                {/* <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Button variant="outline" size="lg" className="w-full">Learn more</Button>
-                </div> */}
-              </div>
-            </div>
-          </main>
-        </div>
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12 lg:py-20"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.div className="space-y-8" variants={itemVariants}>
+            <motion.h1 className="text-4xl mt-5 lg:mt-0 tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              Your Trusted Partner for Seamless <span className="text-blue-600">eBay Fulfillment</span>
+            </motion.h1>
+            <motion.p className="mt-3 text-xl text-gray-500 max-w-2xl">
+              Streamline your eBay business with fast, reliable, and hassle-free fulfillment. From inventory management
+              to speedy shipping, EcomFill got you covered every step of the way.
+            </motion.p>
+            <motion.div>
+              <Button
+                className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transition-all duration-300"
+                // whileHover={{ scale: 1.05 }}
+                // whileTap={{ scale: 0.95 }}
+              >
+                Get started
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+          </motion.div>
+          <motion.div className="relative h-[200px] sm:h-[300px] lg:h-[300px]" variants={itemVariants}>
+            <motion.div
+              className="absolute inset-0 overflow-hidden rounded-2xl"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Image
+                src="/assests/Banner.webp"
+                alt="eBay Fulfillment illustration"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <div className="relative h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full">
-          <Image
-            className="absolute inset-0 w-full h-full object-cover"
-            src="/assests/Banner.webp"
-            alt="Wallet illustration"
-            layout="fill"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent"></div>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
-      {/* <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 ${isVisible ? 'animate-bounce' : 'opacity-0'}`}>
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
-          <Shield className="h-6 w-6 text-blue-600" />
-        </div>
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
-          <Zap className="h-6 w-6 text-blue-600" />
-        </div>
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100">
-          <RefreshCw className="h-6 w-6 text-blue-600" />
-        </div>
-      </div> */}
     </div>
   )
 }

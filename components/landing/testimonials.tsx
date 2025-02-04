@@ -7,19 +7,19 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
+    name: 'Flo***ime Team',
     role: 'Flo***ime Team',
-    content: 'This is by far the easiest and fastest way to fulfill orders and import products directly to my store. With their updated supplier analytics, EcomFill has proven to be the best partner for my business. Thank you for making everything so much easier!',
+    content: 'This is by far the easiest way to fulfill orders and import products directly to my store. With their updated supplier analytics, EcomFill has proven to be the best partner for my business. Thank you for making everything so much easier!',
     avatar: '/icons/woman (1).png',
   },
   {
-    name: 'Michael Chen',
+    name: 'Ut***ore Team',
     role: 'Ut***ore Team',
     content: 'I’ve been using EcomFill for a few months now, and I’m seriously impressed. The customer support team has been so helpful every time I reached out. They walked me through the setup process. It’s great to know they’ve got my back!',
     avatar: '/icons/man.png',
   },
   {
-    name: 'Emily Rodriguez',
+    name: 'De**ium Team',
     role: 'De**ium Team',
     content: 'Their service is amazing! It’s super easy to use, has all the tools I need, and everything works really smoothly. Definitely one of the most user-friendly apps I’ve tried.',
     avatar: '/icons/woman (2).png',
@@ -109,7 +109,7 @@ export default function Testimonials() {
                           </Avatar>
                           <div className="ml-4">
                             <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
-                            <p className="text-sm text-gray-500">{testimonial.role}</p>
+                            {/* <p className="text-sm text-gray-500">{testimonial.role}</p> */}
                           </div>
                         </div>
                       </CardContent>

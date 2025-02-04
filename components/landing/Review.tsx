@@ -118,8 +118,8 @@ export default function ImpactReview() {
               visible: { opacity: 1 },
             }}
           >
-            <AnimatedStat endValue={1.8} label="Dropshippers use EcomFill" suffix="M+" />
-            <AnimatedStat endValue={1} label="Earned by our Dropshippers" prefix="$" suffix="B+" />
+            <AnimatedStat endValue={2.3} label="Dropshippers use EcomFill" suffix="M+" />
+            <AnimatedStat endValue={1223} label="Earned by our Dropshippers" prefix="$" suffix="M+" />
             <AnimatedStat endValue={800} label="Orders Fulfilled" suffix="M+" />
           </motion.div>
         </motion.div>
