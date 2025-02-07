@@ -186,7 +186,7 @@ export const getOrders = async (accessToken: string) => {
           value: originalValue.toFixed(2),  // Original value without markup
           processingFee: processingFee.toFixed(2),  // Separate processing fee
           currency: order.totalFeeBasisAmount.currency,
-          displayValue: ` (+ ${processingFee.toFixed(2)} $ processing fee)` // Formatted display string
+          displayValue: ` (+ ${processingFee.toFixed(2)}$ processing fee)` // Formatted display string
         }
       };
     });
