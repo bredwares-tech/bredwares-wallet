@@ -74,7 +74,48 @@ export const getAccessToken = async (code: string) => {
 //   }
 // };
 
+// 3% Increment
 
+// export const getOrders = async (accessToken: string) => {
+//   try {
+//     // Using the newer Fulfillment API for production
+//     const response = await axios.get(`${API_URL}?limit=50&offset=0`, {
+//       headers: {
+//         Authorization: `Bearer ${accessToken}`,
+//         'Content-Type': 'application/json',
+//         'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'  // Adjust for your target marketplace
+//       }
+//     });
+    
+//     console.log(response.data.orders, "response.data.orders");
+    
+//     const orders = response.data.orders || [];
+    
+//     return orders.map((order: any) => {
+//       // Calculate the price with 3% markup
+//       const originalValue = parseFloat(order.totalFeeBasisAmount.value);
+//       const markupValue = originalValue * 1.03;
+      
+//       return {
+//         orderId: order.orderId,
+//         title: order.lineItems[0]?.title || 'Untitled Order',
+//         image: order.lineItems[0]?.image || 'No Image Available',
+//         status: order.orderFulfillmentStatus,
+//         createdDate: new Date(order.creationDate).toLocaleDateString(),
+//         total: {
+//           value: markupValue.toFixed(2),  // Round to 2 decimal places
+//           originalValue: originalValue.toFixed(2),  // Keep original value for reference
+//           currency: order.totalFeeBasisAmount.currency
+//         }
+//       };
+//     });
+//   } catch (error) {
+//     console.error('Error fetching orders:', error);
+//     throw error;
+//   }
+// };
+
+//3% Decrement
 export const getOrders = async (accessToken: string) => {
   try {
     // Using the newer Fulfillment API for production
@@ -91,9 +132,9 @@ export const getOrders = async (accessToken: string) => {
     const orders = response.data.orders || [];
     
     return orders.map((order: any) => {
-      // Calculate the price with 3% markup
+      // Calculate the price with 3% decrease
       const originalValue = parseFloat(order.totalFeeBasisAmount.value);
-      const markupValue = originalValue * 1.03;
+      const discountedValue = originalValue * 0.97;  // 100% - 3% = 97% = 0.97
       
       return {
         orderId: order.orderId,
@@ -102,7 +143,7 @@ export const getOrders = async (accessToken: string) => {
         status: order.orderFulfillmentStatus,
         createdDate: new Date(order.creationDate).toLocaleDateString(),
         total: {
-          value: markupValue.toFixed(2),  // Round to 2 decimal places
+          value: discountedValue.toFixed(2),  // Round to 2 decimal places
           originalValue: originalValue.toFixed(2),  // Keep original value for reference
           currency: order.totalFeeBasisAmount.currency
         }
