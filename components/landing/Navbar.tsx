@@ -48,7 +48,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Features", sectionId: "features", submenu: [] },
-    { name: "Products", sectionId: "products", submenu: [] },
+    // { name: "Products", sectionId: "products", submenu: [] },
     { name: "Testimonials", sectionId: "testimonials", submenu: [] },
     { name: "FAQ", sectionId: "faq", submenu: [] }, // Assuming FAQ contains pricing
   ];
