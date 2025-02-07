@@ -116,6 +116,46 @@ export const getAccessToken = async (code: string) => {
 // };
 
 //3% Decrement
+// export const getOrders = async (accessToken: string) => {
+//   try {
+//     // Using the newer Fulfillment API for production
+//     const response = await axios.get(`${API_URL}?limit=50&offset=0`, {
+//       headers: {
+//         Authorization: `Bearer ${accessToken}`,
+//         'Content-Type': 'application/json',
+//         'X-EBAY-C-MARKETPLACE-ID': 'EBAY_US'  // Adjust for your target marketplace
+//       }
+//     });
+    
+//     console.log(response.data.orders, "response.data.orders");
+    
+//     const orders = response.data.orders || [];
+    
+//     return orders.map((order: any) => {
+//       // Calculate the price with 3% decrease
+//       const originalValue = parseFloat(order.totalFeeBasisAmount.value);
+//       const discountedValue = originalValue * 0.97;  // 100% - 3% = 97% = 0.97
+      
+//       return {
+//         orderId: order.orderId,
+//         title: order.lineItems[0]?.title || 'Untitled Order',
+//         image: order.lineItems[0]?.image || 'No Image Available',
+//         status: order.orderFulfillmentStatus,
+//         createdDate: new Date(order.creationDate).toLocaleDateString(),
+//         total: {
+//           value: discountedValue.toFixed(2),  // Round to 2 decimal places
+//           originalValue: originalValue.toFixed(2),  // Keep original value for reference
+//           currency: order.totalFeeBasisAmount.currency
+//         }
+//       };
+//     });
+//   } catch (error) {
+//     console.error('Error fetching orders:', error);
+//     throw error;
+//   }
+// };
+
+// Processing fee displayed infront of total 
 export const getOrders = async (accessToken: string) => {
   try {
     // Using the newer Fulfillment API for production
@@ -132,9 +172,9 @@ export const getOrders = async (accessToken: string) => {
     const orders = response.data.orders || [];
     
     return orders.map((order: any) => {
-      // Calculate the price with 3% decrease
+      // Calculate the 3% processing fee
       const originalValue = parseFloat(order.totalFeeBasisAmount.value);
-      const discountedValue = originalValue * 0.97;  // 100% - 3% = 97% = 0.97
+      const processingFee = originalValue * 0.03;  // Calculate 3% fee
       
       return {
         orderId: order.orderId,
@@ -143,9 +183,10 @@ export const getOrders = async (accessToken: string) => {
         status: order.orderFulfillmentStatus,
         createdDate: new Date(order.creationDate).toLocaleDateString(),
         total: {
-          value: discountedValue.toFixed(2),  // Round to 2 decimal places
-          originalValue: originalValue.toFixed(2),  // Keep original value for reference
-          currency: order.totalFeeBasisAmount.currency
+          value: originalValue.toFixed(2),  // Original value without markup
+          processingFee: processingFee.toFixed(2),  // Separate processing fee
+          currency: order.totalFeeBasisAmount.currency,
+          displayValue: `${originalValue.toFixed(2)} (+${processingFee.toFixed(2)} processing fee)` // Formatted display string
         }
       };
     });
