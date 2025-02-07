@@ -69,7 +69,7 @@ export default function OrdersList() {
               <p>Order ID: {order.orderId}</p>
               <p>Status: {order.status}</p>
               <p>Date: {order.createdDate}</p>
-              <p>Total: {order.total.value} {order.total.currency}</p>
+              <p>Total: {order.total.value} {order.total.currency} {order.total.displayValue}</p>
             </div>
           </div>
         </div>
