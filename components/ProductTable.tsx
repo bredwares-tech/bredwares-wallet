@@ -83,7 +83,7 @@ export const ProductTable: React.FC<ProductTableProps> = ({
           >
             <th className="px-6 py-4 text-left">Name</th>
             <th className="px-6 py-4 text-left">Email</th>
-            <th className="px-6 py-4 text-right">Amount</th>
+            <th className="px-6 py-4 text-right">Credits</th>
             <th className="px-6 py-4 text-center">Status</th>
             <th className="px-6 py-4 text-left">Date</th>
           </tr>

@@ -99,7 +99,8 @@ export const createColumns = (
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Amount
+        Credits
+
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
@@ -112,7 +113,7 @@ export const createColumns = (
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Remaining Amount
+        Remaining Credits
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
@@ -155,7 +156,7 @@ export const createColumns = (
                 onEdit(user);
               }}
             >
-              Edit user Remaining Amount
+              Edit user Remaining Credits
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

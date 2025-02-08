@@ -68,13 +68,13 @@ export function UserInfo({ user }: UserInfoProps) {
         <Separator className="my-6" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-card p-4 rounded-lg border">
-            <h3 className="text-lg font-semibold mb-2">Total Amount</h3>
+            <h3 className="text-lg font-semibold mb-2">Total Credits</h3>
             <p className="text-2xl font-bold">
               {formatCurrency(user.total_amount)}
             </p>
           </div>
           <div className="bg-card p-4 rounded-lg border">
-            <h3 className="text-lg font-semibold mb-2">Remaining Amount</h3>
+            <h3 className="text-lg font-semibold mb-2">Remaining Credits</h3>
             <p className="text-2xl font-bold">
               {formatCurrency(user.remaining_amount)}
             </p>

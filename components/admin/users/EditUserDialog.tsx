@@ -64,7 +64,7 @@ export function EditUserDialog({
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="remaining_amount" className="text-right">
-              Remaining Amount
+              Remaining Credits
             </Label>
             <Input
               id="remaining_amount"
