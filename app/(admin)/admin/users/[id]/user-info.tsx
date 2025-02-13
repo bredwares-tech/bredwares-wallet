@@ -1,17 +1,18 @@
-"use client";
+import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+
 interface UserInfoProps {
   user: {
     id: string;
     full_name: string;
     email: string;
-    total_amount: number;
+    total_amount: number | null;
     created_at: string;
     is_Admin: boolean;
-    remaining_amount: string;
+    remaining_amount: string | null;
   };
 }
 
@@ -33,12 +34,8 @@ export function UserInfo({ user }: UserInfoProps) {
     });
   };
 
-  const formatCurrency = (amount: number | string) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(Number(amount));
-  };
+  const totalCredits = user.total_amount ?? 0; // Default to 0 if null/undefined
+  const remainingCredits = Number(user.remaining_amount) || 0; // Convert string to number & default to 0
 
   return (
     <Card className="w-full max-w-4xl mx-auto">
@@ -67,18 +64,25 @@ export function UserInfo({ user }: UserInfoProps) {
         </div>
         <Separator className="my-6" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-card p-4 rounded-lg border">
-            <h3 className="text-lg font-semibold mb-2">Total Credits</h3>
-            <p className="text-2xl font-bold">
-              {formatCurrency(user.total_amount)}
-            </p>
+          {/* Total Credits */}
+          <div className="bg-card p-4 rounded-lg border flex items-center justify-between">
+            <h3 className="text-lg font-semibold">Total Credits</h3>
+            <div className="flex items-center space-x-2">
+              <Image src="/coin.png" alt="Coin Icon" width={24} height={24} />
+              <span className="text-2xl font-bold">{totalCredits}</span>
+            </div>
           </div>
-          <div className="bg-card p-4 rounded-lg border">
-            <h3 className="text-lg font-semibold mb-2">Remaining Credits</h3>
-            <p className="text-2xl font-bold">
-              {formatCurrency(user.remaining_amount)}
-            </p>
+
+          {/* Remaining Credits */}
+          <div className="bg-card p-4 rounded-lg border flex items-center justify-between">
+            <h3 className="text-lg font-semibold">Remaining Credits</h3>
+            <div className="flex items-center space-x-2">
+              <Image src="/coin.png" alt="Coin Icon" width={24} height={24} />
+              <span className="text-2xl font-bold">{remainingCredits}</span>
+            </div>
           </div>
+
+          {/* Account Created */}
           <div className="bg-card p-4 rounded-lg border sm:col-span-2 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-2">Account Created</h3>
             <p className="text-xl">{formatDate(user.created_at)}</p>

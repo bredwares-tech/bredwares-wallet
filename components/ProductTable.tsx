@@ -101,7 +101,7 @@ export const ProductTable: React.FC<ProductTableProps> = ({
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-right">
                 <div className="text-gray-900 font-medium">
-                  ${Number(data.amount).toLocaleString()}
+                  {Number(data.amount).toLocaleString()}
                 </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-center">
