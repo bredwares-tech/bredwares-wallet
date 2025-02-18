@@ -91,7 +91,12 @@ export const createColumns = ({
         </Button>
       );
     },
-    cell: ({ row }) => <div>{row.getValue("amount")}</div>,
+    cell: ({ row }) => (
+      <div className="flex items-center">
+        <img src="/coin.png" alt="icon" width={24} height={24} />
+        {row.getValue("amount")}
+      </div>
+    ),
   },
   {
     accessorKey: "status",

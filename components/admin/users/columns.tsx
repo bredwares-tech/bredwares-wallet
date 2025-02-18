@@ -100,11 +100,26 @@ export const createColumns = (
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Credits
-
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
-    cell: ({ row }) => <div>{row.getValue("total_amount")}</div>,
+    cell: ({ row }) => {
+      // Ensure the value is a number and fallback to 0 if undefined or not a valid number
+      const amount = Number(row.getValue("total_amount")) || 0;
+
+      return (
+        <div className="flex items-center">
+          <img
+            src="/coin.png"
+            alt="icon"
+            width={24}
+            height={24}
+            className="mr-2"
+          />
+          {amount}
+        </div>
+      );
+    },
   },
   {
     accessorKey: "remaining_amount",
@@ -148,8 +163,8 @@ export const createColumns = (
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             {/* <DropdownMenuItem onClick={(e) => e.stopPropagation()}>
-              View user details
-            </DropdownMenuItem> */}
+            View user details
+          </DropdownMenuItem> */}
             <DropdownMenuItem
               onClick={(e) => {
                 e.stopPropagation();
