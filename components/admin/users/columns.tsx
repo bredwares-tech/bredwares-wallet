@@ -132,7 +132,24 @@ export const createColumns = (
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
-    cell: ({ row }) => <div>{row.getValue("remaining_amount")}</div>,
+    cell: ({ row }) => {
+      const amount = String(row.getValue("remaining_amount") || "");
+
+      return amount === "--" ? (
+        <div>{amount}</div>
+      ) : (
+        <div className="flex items-center">
+          <img
+            src="/coin.png"
+            alt="icon"
+            width={24}
+            height={24}
+            className="mr-2"
+          />
+          {amount}
+        </div>
+      );
+    },
   },
   {
     id: "actions",

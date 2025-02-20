@@ -120,7 +120,7 @@ export default function AdminDashboard() {
       <div className="grid gap-4 w-full mt-8">
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Recent Transitions</CardTitle>
+            <CardTitle>Recent Transactions</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-6">

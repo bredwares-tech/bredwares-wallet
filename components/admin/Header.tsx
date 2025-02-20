@@ -34,9 +34,9 @@ export default function Header({
   }, []);
 
   const userMenuItems = [
-    { icon: UserCircle, label: "Profile", href: "/admin/profile" },
-    { icon: Mail, label: "Messages", href: "/admin/messages" },
-    { icon: Settings, label: "Settings", href: "/admin/settings" },
+    // { icon: UserCircle, label: "Profile", href: "/admin/profile" },
+    // { icon: Mail, label: "Messages", href: "/admin/messages" },
+    // { icon: Settings, label: "Settings", href: "/admin/settings" },
     {
       icon: LogOut,
       label: "Logout",
@@ -59,9 +59,9 @@ export default function Header({
           <h1 className="text-xl font-semibold">Admin Dashboard</h1>
         </div>
         <div className="flex items-center gap-4">
-          <button className="p-2 hover:bg-gray-100 rounded-full">
+          {/* <button className="p-2 hover:bg-gray-100 rounded-full">
             <Bell className="h-5 w-5" />
-          </button>
+          </button> */}
 
           {/* User Menu */}
           <div className="relative" ref={userMenuRef}>
